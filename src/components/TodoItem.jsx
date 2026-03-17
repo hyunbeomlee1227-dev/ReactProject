@@ -9,7 +9,7 @@ function TodoItem({ todo }) {
                 onChange={() => {
                     toggleTodo(todo.id)
                 }}
-                checked={todo.completed}
+                checked={todo.completed || false}
             />
             {todo.id} / {todo.todo}
             <button onClick={() => removeTodo(todo.id)}>X</button>

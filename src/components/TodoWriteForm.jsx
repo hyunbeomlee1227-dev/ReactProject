@@ -5,7 +5,17 @@ function TodoWriteForm() {
     const handleOnSubmit = (e) => {
         e.preventDefault()
         const form = e.target
-        addTodo(form.todo.value)
+
+        fetch('https://dummyjson.com/todos/add', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                todo: form.todo.value,
+                completed: false,
+                userId: 5,
+            }),
+        })
+        // addTodo(form.todo.value)
     }
 
     return (
